@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.png';
 import './App.css';
 
 const ipfsClient = require('ipfs-http-client')
@@ -12,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       buffer: null,
-      memeHash: ``
+      memeHash: `QmcEsejpGhrEKoNnFar4kvbCTaoFno2XhAXCWjEUq4ucJX`
     }
 
   }
@@ -29,13 +28,15 @@ class App extends Component {
     }
   }
 
-  // example: "QmUPeUc81UNzhjDx1M9y3Ni67YUFWK53PvZxMRpW4PTRhJ"
-  // example url: http://localhost:5001/ipfs/QmUPeUc81UNzhjDx1M9y3Ni67YUFWK53PvZxMRpW4PTRhJ
+  // example: "QmcEsejpGhrEKoNnFar4kvbCTaoFno2XhAXCWjEUq4ucJX"
+  // example url: https://ipfs.io/ipfs/QmcEsejpGhrEKoNnFar4kvbCTaoFno2XhAXCWjEUq4ucJX/
   submitFile = (event) => {
     event.preventDefault()
     console.log("Submitting file to ipfs...")
-    ipfs.add(this.state.buffer, (error, result) => {
+    ipfs.add(this.state.buffer, async (error, result) => {
       console.log('Ipfs result', result)
+      const memeHash = await result[0].hash
+      this.setState({ memeHash })
       if (error) {
         console.error(error)
         return
@@ -67,7 +68,7 @@ class App extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={logo} className="App-logo" alt="logo" />
+                  <img src={`https://ipfs.io/ipfs/${this.state.memeHash}`} />
                 </a>
                 <form onSubmit={this.submitFile}>
                   <p>&nbsp;</p> {/* non breaking space*/}
