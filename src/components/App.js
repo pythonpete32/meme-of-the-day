@@ -3,15 +3,16 @@ import logo from '../logo.png';
 import './App.css';
 
 const ipfsClient = require('ipfs-http-client')
-// const ipfs = ipfsClient('localhost', '5001', { protocol: 'http' }) // leaving out the arguments will default to these values
-const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
+
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buffer: null
+      buffer: null,
+      memeHash: ``
     }
 
   }
@@ -29,15 +30,15 @@ class App extends Component {
   }
 
   // example: "QmUPeUc81UNzhjDx1M9y3Ni67YUFWK53PvZxMRpW4PTRhJ"
-  // example url: http://localhost:5001/QmUPeUc81UNzhjDx1M9y3Ni67YUFWK53PvZxMRpW4PTRhJ
+  // example url: http://localhost:5001/ipfs/QmUPeUc81UNzhjDx1M9y3Ni67YUFWK53PvZxMRpW4PTRhJ
   submitFile = (event) => {
     event.preventDefault()
-    console.log("submitting the form...")
+    console.log("Submitting file to ipfs...")
     ipfs.add(this.state.buffer, (error, result) => {
-      // do stuff here
-      console.log('IPFS result:', result)
+      console.log('Ipfs result', result)
       if (error) {
-        console.log(error)
+        console.error(error)
+        return
       }
 
       // step2: store file on blockchain
@@ -70,7 +71,7 @@ class App extends Component {
                 </a>
                 <form onSubmit={this.submitFile}>
                   <p>&nbsp;</p> {/* non breaking space*/}
-                  <h2>Meme Of The Day</h2>
+                  <h2>MINE</h2>
                   <input type='file' onChange={this.captureFile} />
                   <input type='submit' />
                 </form>

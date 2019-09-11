@@ -32,11 +32,32 @@ captureFile = (event) => {
 ```
 
 4. install ipfs and add to project
+
 ```sh
 npm i --save ipfs-http-client
 ```
 
 import into project
+
 ```js
-var ipfsClient = require('ipfs-http-client')
+const ipfsClient = require('ipfs-http-client')
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
+```
+
+5. store file in ipfs
+
+```js
+  submitFile = (event) => {
+    event.preventDefault()
+    console.log("submitting the form...")
+    ipfs.add(this.state.buffer, (error, result) => {
+      // do stuff here
+      console.log('IPFS result:', result)
+      if (error) {
+        console.log(error)
+      }
+
+      // step2: store file on blockchain
+    })
+  }
 ```
