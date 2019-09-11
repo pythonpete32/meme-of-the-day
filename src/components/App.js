@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Web3 from 'web3';
+import Meme from '../abis/Meme.json'
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
@@ -12,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       account: '',
+      contract: null,
       buffer: null,
       memeHash: `QmNWEkZi3GjoFHKXK49waPZD22k6zb3o7s7xQTA8GLURbt`
     }
@@ -23,14 +25,22 @@ class App extends Component {
     await this.loadBlockChainData()
   }
 
-  // get account
-  // get network
-  // get smart contract
-  // get hash
   async loadBlockChainData() {
     const web3 = await window.web3
     const account = await web3.eth.getAccounts()
-    console.log(account)
+    const network = await web3.eth.net.getId()
+    const networkData = Meme.networks[network]
+    console.log(networkData)
+    if (networkData) {
+      const abi = Meme.abi
+      const address = networkData.address
+      const contract = web3.eth.Contract(abi, address)
+      this.setState({ contract: contract })
+      const IPFShash = await contract.methods.getState().call()
+      this.setState({ memeHash: IPFShash })
+    } else {
+      window.alert('contract not deployed to dected network')
+    }
     this.setState({ account: account[0] })
   }
 
@@ -67,13 +77,16 @@ class App extends Component {
     ipfs.add(this.state.buffer, async (error, result) => {
       console.log('Ipfs result', result)
       const memeHash = await result[0].hash
-      this.setState({ memeHash })
       if (error) {
         console.error(error)
         return
       }
-
       // step2: store file on blockchain
+      const contract = this.state.contract
+      contract.methods.setState(memeHash).send({ from: this.state.account })
+        .then((result) => {
+          this.setState({ memeHash })
+        })
     })
   }
 
@@ -110,7 +123,7 @@ class App extends Component {
                 </a>
                 <form onSubmit={this.submitFile}>
                   <p>&nbsp;</p> {/* non breaking space*/}
-                  <h2>MINE</h2>
+                  <h2>Meme of the Day</h2>
                   <input type='file' onChange={this.captureFile} />
                   <input type='submit' />
                 </form>
