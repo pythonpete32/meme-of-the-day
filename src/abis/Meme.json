@@ -1,0 +1,568 @@
+{
+  "contractName": "Meme",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_hash",
+          "type": "string"
+        }
+      ],
+      "name": "setState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getState",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getState\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_hash\",\"type\":\"string\"}],\"name\":\"setState\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/media/student/projects1/meme-of-the-day/src/contracts/Meme.sol\":\"Meme\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/media/student/projects1/meme-of-the-day/src/contracts/Meme.sol\":{\"keccak256\":\"0x605e43640011e6793635fa9999095f6d75973f59e9c4458cbb7cf5550ce7a7dd\",\"urls\":[\"bzzr://196ade211710b587d74d7cb6303ec3aa6b42bb894423b7a891beacec2a7bd226\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506102c0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80631865c57d1461003b57806368794b87146100be575b600080fd5b610043610137565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610135600480360360208110156100d457600080fd5b81019080803590602001906401000000008111156100f157600080fd5b82018360208201111561010357600080fd5b8035906020019184600183028401116401000000008311171561012557600080fd5b90919293919293905050506101d9565b005b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101cf5780601f106101a4576101008083540402835291602001916101cf565b820191906000526020600020905b8154815290600101906020018083116101b257829003601f168201915b5050505050905090565b8181600091906101ea9291906101ef565b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061023057803560ff191683800117855561025e565b8280016001018555821561025e579182015b8281111561025d578235825591602001919060010190610242565b5b50905061026b919061026f565b5090565b61029191905b8082111561028d576000816000905550600101610275565b5090565b9056fea165627a7a72305820b134ce6a4948bd3d74853a5d2454361bf1829884dcace6fed8b12e546e32f3dd0029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80631865c57d1461003b57806368794b87146100be575b600080fd5b610043610137565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610135600480360360208110156100d457600080fd5b81019080803590602001906401000000008111156100f157600080fd5b82018360208201111561010357600080fd5b8035906020019184600183028401116401000000008311171561012557600080fd5b90919293919293905050506101d9565b005b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101cf5780601f106101a4576101008083540402835291602001916101cf565b820191906000526020600020905b8154815290600101906020018083116101b257829003601f168201915b5050505050905090565b8181600091906101ea9291906101ef565b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061023057803560ff191683800117855561025e565b8280016001018555821561025e579182015b8281111561025d578235825591602001919060010190610242565b5b50905061026b919061026f565b5090565b61029191905b8082111561028d576000816000905550600101610275565b5090565b9056fea165627a7a72305820b134ce6a4948bd3d74853a5d2454361bf1829884dcace6fed8b12e546e32f3dd0029",
+  "sourceMap": "64:209:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:209:0;;;;;;;",
+  "deployedSourceMap": "64:209:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:209:0;;;;;;;;;;;;;;;;;;;;;;;;188:83;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;188:83:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;103:79;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;103:79:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;103:79:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;103:79:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;103:79:0;;;;;;;;;;;;:::i;:::-;;188:83;228:13;260:4;253:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;188:83;:::o;103:79::-;170:5;;163:4;:12;;;;;;;:::i;:::-;;103:79;;:::o;64:209::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.5.8;\n\n/*\n*   Stores the ipfs hash of memes\n*/\ncontract Meme {\n\n    string hash;\n\n    function setState(string calldata _hash) external {\n        hash = _hash;\n    }\n\n    function getState() public view returns(string memory) {\n        return hash;\n    }\n}",
+  "sourcePath": "/media/student/projects1/meme-of-the-day/src/contracts/Meme.sol",
+  "ast": {
+    "absolutePath": "/media/student/projects1/meme-of-the-day/src/contracts/Meme.sol",
+    "exportedSymbols": {
+      "Meme": [
+        22
+      ]
+    },
+    "id": 23,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 22,
+        "linearizedBaseContracts": [
+          22
+        ],
+        "name": "Meme",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "hash",
+            "nodeType": "VariableDeclaration",
+            "scope": 22,
+            "src": "85:11:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "85:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 12,
+              "nodeType": "Block",
+              "src": "153:29:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 8,
+                      "name": "hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "163:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9,
+                      "name": "_hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "170:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "src": "163:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 11,
+                  "nodeType": "ExpressionStatement",
+                  "src": "163:12:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "121:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "121:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "120:23:0"
+            },
+            "returnParameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "153:0:0"
+            },
+            "scope": 22,
+            "src": "103:79:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 20,
+              "nodeType": "Block",
+              "src": "243:28:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 18,
+                    "name": "hash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 3,
+                    "src": "260:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 17,
+                  "id": 19,
+                  "nodeType": "Return",
+                  "src": "253:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 21,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "205:2:0"
+            },
+            "returnParameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21,
+                  "src": "228:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "228:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "227:15:0"
+            },
+            "scope": 22,
+            "src": "188:83:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 23,
+        "src": "64:209:0"
+      }
+    ],
+    "src": "0:273:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/media/student/projects1/meme-of-the-day/src/contracts/Meme.sol",
+    "exportedSymbols": {
+      "Meme": [
+        22
+      ]
+    },
+    "id": 23,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 22,
+        "linearizedBaseContracts": [
+          22
+        ],
+        "name": "Meme",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "hash",
+            "nodeType": "VariableDeclaration",
+            "scope": 22,
+            "src": "85:11:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "85:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 12,
+              "nodeType": "Block",
+              "src": "153:29:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 8,
+                      "name": "hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "163:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 9,
+                      "name": "_hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "170:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "src": "163:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 11,
+                  "nodeType": "ExpressionStatement",
+                  "src": "163:12:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "121:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "121:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "120:23:0"
+            },
+            "returnParameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "153:0:0"
+            },
+            "scope": 22,
+            "src": "103:79:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 20,
+              "nodeType": "Block",
+              "src": "243:28:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 18,
+                    "name": "hash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 3,
+                    "src": "260:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 17,
+                  "id": 19,
+                  "nodeType": "Return",
+                  "src": "253:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 21,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "205:2:0"
+            },
+            "returnParameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21,
+                  "src": "228:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "228:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "227:15:0"
+            },
+            "scope": 22,
+            "src": "188:83:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 23,
+        "src": "64:209:0"
+      }
+    ],
+    "src": "0:273:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "1568192008396": {
+      "events": {},
+      "links": {},
+      "address": "0xdaC70cE7eB102f45320160abF4d57B4Ba13644d9",
+      "transactionHash": "0x3f4e86f2fc2a7f5057a7de8b58aa5138a85c501e1d8087c3b908369bf294733a"
+    },
+    "1568192167776": {
+      "events": {},
+      "links": {},
+      "address": "0x68689Cd318eA7548C5b4CFb00A473d276a0F2eC9",
+      "transactionHash": "0x15be068a8ce9cf94cdd0cc3d0f0b965f19262c3e7a10c748ea77a7376d9d0bfd"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-09-11T08:56:46.877Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
