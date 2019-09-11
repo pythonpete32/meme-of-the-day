@@ -29,11 +29,8 @@ contract('Meme', (accounts) => {
         it('should set the state of the hash var', async () => {
             // Arange
             const testHash = '0xSomeHash'
-
             // Act
-            const tx = await meme.setState(testHash)
             const result = await meme.getState()
-
             // Assert
             assert.equal(result, testHash)
         })

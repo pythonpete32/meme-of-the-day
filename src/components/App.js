@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Web3 from 'web3';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
@@ -10,8 +11,37 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      account: '',
       buffer: null,
-      memeHash: `QmcEsejpGhrEKoNnFar4kvbCTaoFno2XhAXCWjEUq4ucJX`
+      memeHash: `QmNWEkZi3GjoFHKXK49waPZD22k6zb3o7s7xQTA8GLURbt`
+    }
+  }
+
+  // lifecycle method. refactor to hooks 
+  async componentWillMount() {
+    await this.loadWeb3()
+    await this.loadBlockChainData()
+  }
+
+  // get account
+  // get network
+  // get smart contract
+  // get hash
+  async loadBlockChainData() {
+    const web3 = await window.web3
+    const account = await web3.eth.getAccounts()
+    console.log(account)
+    this.setState({ account: account[0] })
+  }
+
+  async loadWeb3() {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
+    } if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider)
+    } else {
+      window.alert('install metamask')
     }
 
   }
@@ -30,7 +60,8 @@ class App extends Component {
 
   // example: "QmcEsejpGhrEKoNnFar4kvbCTaoFno2XhAXCWjEUq4ucJX"
   // example url: https://ipfs.io/ipfs/QmcEsejpGhrEKoNnFar4kvbCTaoFno2XhAXCWjEUq4ucJX/
-  submitFile = (event) => {
+  // refactor this to handle the error properly
+  submitFile = async (event) => {
     event.preventDefault()
     console.log("Submitting file to ipfs...")
     ipfs.add(this.state.buffer, async (error, result) => {
@@ -58,6 +89,13 @@ class App extends Component {
           >
             Meme of the Day
           </a>
+          <ul className="navbar-nav px-4">
+            <li className="nav-item "> {/* text-nowrap d-none d-sm-none d-sm-block */}
+              <small className="text-white">
+                {this.state.account}
+              </small>
+            </li>
+          </ul>
         </nav>
         <div className="container-fluid mt-5">
           <div className="row">
